@@ -22,6 +22,7 @@ namespace DAL.Entities
         {
             Database.SetInitializer<AppDBContext>(new DBInitializer());
         }
+        public DbSet<UserProfile> UserProfiles { get; set; }
 
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {

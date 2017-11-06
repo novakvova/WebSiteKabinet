@@ -53,14 +53,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ISqlRepository.cs" />
+    <Compile Include="Abstract\IUserRepository.cs" />
+    <Compile Include="Concrete\SqlRepository.cs" />
+    <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Entities\AppDBContext.cs" />
+    <Compile Include="Entities\BaseModel.cs" />
     <Compile Include="Entities\DBInitializer.cs" />
     <Compile Include="Entities\Identity\AppRole.cs" />
     <Compile Include="Entities\Identity\AppUser.cs" />
+    <Compile Include="Entities\UserProfile.cs" />
     <Compile Include="Interfaces\IAppDBContext.cs" />
     <Compile Include="Migrations\201710311034593_Create DB And Identity Tables.cs" />
     <Compile Include="Migrations\201710311034593_Create DB And Identity Tables.Designer.cs">
       <DependentUpon>201710311034593_Create DB And Identity Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711061731164_Add table UserProfiles.cs" />
+    <Compile Include="Migrations\201711061731164_Add table UserProfiles.Designer.cs">
+      <DependentUpon>201711061731164_Add table UserProfiles.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +82,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710311034593_Create DB And Identity Tables.resx">
       <DependentUpon>201710311034593_Create DB And Identity Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711061731164_Add table UserProfiles.resx">
+      <DependentUpon>201711061731164_Add table UserProfiles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

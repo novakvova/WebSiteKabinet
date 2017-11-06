@@ -16,5 +16,6 @@ namespace DAL.Entities.Identity
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             return userIdentity;
         }
+        public virtual UserProfile UserProfile{ get; set; }
     }
 }

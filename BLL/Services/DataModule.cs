@@ -1,6 +1,8 @@
 ﻿using Autofac;
 using BLL.Providers;
 using BLL.Services.Identity;
+using DAL.Abstract;
+using DAL.Concrete;
 using DAL.Entities;
 using DAL.Entities.Identity;
 using DAL.Interfaces;
@@ -44,6 +46,8 @@ namespace BLL.Services
             builder.Register<IDataProtectionProvider>(c => _app.GetDataProtectionProvider()).InstancePerRequest();
             builder.RegisterType<AccountProvider>().AsSelf().InstancePerRequest();
 
+            builder.RegisterType<SqlRepository>().As<ISqlRepository>().InstancePerRequest();
+            builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerRequest();
             base.Load(builder);
         }
     }
