@@ -15,8 +15,11 @@ namespace DAL.Entities
         [StringLength(maximumLength:128)]
         public string Id { get; set; }
         public virtual AppUser AppUserOf { get; set; }
+        [StringLength(maximumLength:256)]
         public string FirstName { get; set; }
-        public string SecondName { get; set; }
+        [StringLength(maximumLength: 256)]
+        public string LastName { get; set; }
+        [StringLength(maximumLength: 256)]
         public string Image { get; set; }
     }
 }

@@ -18,8 +18,8 @@ namespace BLL.Providers
         private readonly AppSignInManager _signInManager;
         private readonly IAuthenticationManager _authManager;
 
-        public AccountProvider(AppUserManager userManager, 
-            AppSignInManager signInManager, 
+        public AccountProvider(AppUserManager userManager,
+            AppSignInManager signInManager,
             IAuthenticationManager authManager)
         {
             _userManager = userManager;
@@ -64,16 +64,26 @@ namespace BLL.Providers
 
         public async Task<IdentityResult> Register(RegisterViewModel model)
         {
-            var user = new AppUser {
+            var user = new AppUser
+            {
                 UserName = model.Email,
                 Email = model.Email
             };
             var result = await UserManager.CreateAsync(user, model.Password);
-            if(result.Succeeded)
+            if (result.Succeeded)
             {
                 await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
             }
             return result;
+        }
+        public async Task<ExternalLoginInfo> GetExternalLoginInfoAsync()
+        {
+            return await _authManager.GetExternalLoginInfoAsync();
+        }
+
+        public async Task<SignInStatus> ExternalSignInAsync(ExternalLoginInfo loginInfo)
+        {
+            return await _signInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
         }
     }
 }

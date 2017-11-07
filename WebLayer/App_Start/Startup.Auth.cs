@@ -6,10 +6,12 @@ using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.DataProtection;
+using Microsoft.Owin.Security.Facebook;
 using Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
 
@@ -65,18 +67,47 @@ namespace WebLayer.App_Start
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //var facebookOptions = new FacebookAuthenticationOptions
+
+            app.UseFacebookAuthentication(new FacebookAuthenticationOptions()
+            {
+                AppId = "1991172914492732",
+                AppSecret = "00f559d9093d1a7c106b828d9b9715c9",
+                BackchannelHttpHandler = new HttpClientHandler(),
+                UserInformationEndpoint = "https://graph.facebook.com/v2.8/me?fields=id,name,email,first_name,last_name,birthday",
+                //Scope = { "email" },
+                Provider = new FacebookAuthenticationProvider()
+                {
+                    OnAuthenticated = async context =>
+                  {
+                      context.Identity.AddClaim(new System.Security.Claims.Claim("FacebookAccessToken", context.AccessToken));
+                      foreach (var claim in context.User)
+                      {
+                          var claimType = string.Format("urn:facebook:{0}", claim.Key);
+                          string claimValue = claim.Value.ToString();
+                          if (!context.Identity.HasClaim(claimType, claimValue))
+                              context.Identity.AddClaim(new System.Security.Claims.Claim(claimType, claimValue, "XmlSchemaString", "Facebook"));
+                      }
+                  }
+                }
+            });
+
+            //var facebookOptions = new FacebookAuthenticationOptions()
             //{
-            //    AppId = "350879062040009",
-            //    AppSecret = "f1105a9743238e20671f63d37b373298"
+            //    AppId = "1991172914492732",
+            //    AppSecret = "00f559d9093d1a7c106b828d9b9715c9"
             //};
 
             //facebookOptions.Scope.Add("email");
 
             //facebookOptions.Fields.Add("name");
             //facebookOptions.Fields.Add("email");
+            //facebookOptions.Fields.Add("first_name");
+            //facebookOptions.Fields.Add("last_name");
+            //facebookOptions.Fields.Add("birthday");
 
             //app.UseFacebookAuthentication(facebookOptions);
+
+
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

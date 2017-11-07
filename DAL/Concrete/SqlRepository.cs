@@ -53,5 +53,11 @@ namespace DAL.Concrete
         {
             _context.SaveChanges();
         }
+
+        public TEntity GetById<TEntity>(string id) where TEntity : BaseModel<string>
+        {
+            return GetAll<TEntity>()
+                .SingleOrDefault(e => e.Id == id);
+        }
     }
 }

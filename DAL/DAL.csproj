@@ -72,6 +72,14 @@
     <Compile Include="Migrations\201711061731164_Add table UserProfiles.Designer.cs">
       <DependentUpon>201711061731164_Add table UserProfiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711071829162_Update fields table UserProfiles.cs" />
+    <Compile Include="Migrations\201711071829162_Update fields table UserProfiles.Designer.cs">
+      <DependentUpon>201711071829162_Update fields table UserProfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071836351_Update field SecondName to LastName table UserProfiles.cs" />
+    <Compile Include="Migrations\201711071836351_Update field SecondName to LastName table UserProfiles.Designer.cs">
+      <DependentUpon>201711071836351_Update field SecondName to LastName table UserProfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,6 +93,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711061731164_Add table UserProfiles.resx">
       <DependentUpon>201711061731164_Add table UserProfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071829162_Update fields table UserProfiles.resx">
+      <DependentUpon>201711071829162_Update fields table UserProfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071836351_Update field SecondName to LastName table UserProfiles.resx">
+      <DependentUpon>201711071836351_Update field SecondName to LastName table UserProfiles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
