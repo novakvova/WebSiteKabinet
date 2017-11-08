@@ -45,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,8 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ISqlRepository.cs" />
+    <Compile Include="Abstract\IUnitOfWork.cs" />
     <Compile Include="Abstract\IUserRepository.cs" />
     <Compile Include="Concrete\SqlRepository.cs" />
+    <Compile Include="Concrete\UnitOfWork.cs" />
     <Compile Include="Concrete\UserRepository.cs" />
     <Compile Include="Entities\AppDBContext.cs" />
     <Compile Include="Entities\BaseModel.cs" />

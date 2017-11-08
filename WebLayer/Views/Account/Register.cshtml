@@ -4,6 +4,9 @@
 }
 
 <h2>@ViewBag.Title.</h2>
+@section styles {
+<link href="~/Content/croper/cropper.css" rel="stylesheet" />
+    }
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
@@ -54,7 +57,10 @@
     </div>
 }
 
+@Html.Partial("_CroperSelectImage")
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+<script src="~/Scripts/croper/cropper.js"></script>
+<script src="~/Scripts/custom/Account/registerCroper.js"></script>
 }
 

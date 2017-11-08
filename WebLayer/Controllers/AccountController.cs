@@ -88,8 +88,8 @@ namespace WebLayer.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _accountProvider.Register(model);
-                if (result.Succeeded)
+                var result = await _accountProvider.RegisterAsync(model);
+                if (result)
                 {
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
@@ -98,7 +98,7 @@ namespace WebLayer.Controllers
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
                     return RedirectToAction("Index", "Home");
                 }
-                AddErrors(result);
+                //AddErrors(result);
             }
             // If we got this far, something failed, redisplay form
             return View(model);

@@ -48,6 +48,7 @@ namespace BLL.Services
 
             builder.RegisterType<SqlRepository>().As<ISqlRepository>().InstancePerRequest();
             builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerRequest();
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             base.Load(builder);
         }
     }
