@@ -1,4 +1,4 @@
-﻿<div id="croper">
+﻿<div id="cropper">
     <div class="row">
         <div class="col-md-12">
             <div class="img-container">
@@ -6,7 +6,33 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row docs-buttons">
+        <div class="btn-group ">
+            <button type="button" class="btn btn-primary" data-method="zoom" data-option="0.1" title="Zoom In">
+                <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;zoom&quot;, 0.1)">
+                    <span class="fa fa-search-plus"></span>
+                </span>
+            </button>
+            <button type="button" class="btn btn-primary" data-method="zoom" data-option="-0.1" title="Zoom Out">
+                <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;zoom&quot;, -0.1)">
+                    <span class="fa fa-search-minus"></span>
+                </span>
+            </button>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-method="rotate" data-option="-45" title="Rotate Left">
+                <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;rotate&quot;, -45)">
+                    <span class="fa fa-rotate-left"></span>
+                </span>
+            </button>
+            <button type="button" class="btn btn-primary" data-method="rotate" data-option="45" title="Rotate Right">
+                <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;rotate&quot;, 45)">
+                    <span class="fa fa-rotate-right"></span>
+                </span>
+            </button>
+        </div>
+
         <div class="col-md-12">
             <div class="btn-group">
                 <button type="button" class="btn btn-primary" data-method="closeEditor">
@@ -15,11 +41,13 @@
             </div>
         </div>
         <div class="col-md-12 text-center">
-            <button type="button" class="btn btn-primary" data-method="getCroperCanvas">
-                @*<span class="doc-tooltip">*@
+            <div class="btn-group docs-buttons">
+                <button type="button" class="btn btn-primary" data-method="getCroppedCanvas">
+                    @*<span class="doc-tooltip">*@
                     Зберегти зображення
-                @*</span>*@
-            </button>
+                    @*</span>*@
+                </button>
+            </div>
         </div>
     </div>
 </div>

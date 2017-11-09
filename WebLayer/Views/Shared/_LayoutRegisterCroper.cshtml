@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/mySite/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/mySite/css/style.css" rel="stylesheet" />
+    <link href="~/Content/mySite/css/material.css" rel="stylesheet" />
+    <link href="~/Content/mySite/css/bootstrap-dialog.min.css" rel="stylesheet" />
+    <link href="~/Content/mySite/css/font-awesome.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+    </style>
+    @*custom css*@
+
+    <link href="~/Content/MySite/css/main.css" rel="stylesheet" />
+
+    @RenderSection("styles", false)
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    <script src="~/Content/mySite/js/jquery.js"></script>
+    <script src="~/Content/mySite/js/app.js"></script>
+</head>
+<body>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    <script src="~/Content/mySite/js/footer/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="~/Content/mySite/js/footer/bootstrap.min.js"></script>
+    <script src="~/Content/mySite/js/footer/wow.min.js"></script>
+    <script src="~/Content/mySite/js/footer/jquery.accordion.js"></script>
+    <script src="~/Content/mySite/js/footer/materialize.js"></script>
+    <script src="~/Content/mySite/js/footer/core.js"></script>
+    <script src="~/Content/mySite/js/footer/jquery.nicescroll.min.js"></script>
+    <script src="~/Content/mySite/js/footer/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Content/mySite/js/footer/bootstrap-dialog.min.js"></script>
+    <script src="~/Content/mySite/js/footer/select2.js"></script>
+    <script src="~/Content/mySite/js/footer/form-elements.js"></script>
+    <script src="~/Content/mySite/js/footer/utils/url_slug.js"></script>
+    <script src="~/Content/mySite/js/footer/admid.validation.js"></script>
+
+    <script src="~/Content/mySite/js/footer/main.js"></script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

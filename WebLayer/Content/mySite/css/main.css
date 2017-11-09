@@ -1,0 +1,361 @@
+﻿body {
+    /*padding-right: 0px !important;*/
+   /* padding-right: 0px !important;*/
+}
+
+.no-text-trans {
+    text-transform: none;
+}
+
+
+/*/////////////////////*/
+/*AJAX LOADER*/
+.modal-loader {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 0, 0, 0, .5 ) 
+                url('../images/ajax-loader.svg') 
+                50% 50% 
+                no-repeat;
+}
+body.loading {
+    overflow: hidden;
+    padding-right: 17px;
+}
+body.loading .modal-loader {
+    display: block;
+}
+/*END AJAX LOADER*/
+
+
+
+
+
+
+
+/*/////////////////////*/
+/*VALIDATION*/
+.input-validation-error {
+    border: 1px solid #f51c1c !important;
+}
+
+select[class~="input-validation-error"] + .select2-container--default .select2-selection--single {
+    border: 1px solid #f51c1c !important;
+}
+/*END VALIDATION*/
+
+
+
+
+
+
+/*/////////////////////*/
+/*COMMON*/
+.admin-header-logo {
+    color: #fff;
+    font-size: 31px;
+    margin-top: -10px;
+    display: inline-block;
+}
+
+.edit-wrapper {
+    border: 2px solid #dbdee4;
+    overflow: hidden;
+    margin-top: 15px;
+    padding-top: 15px;
+    position: relative;
+}
+
+.edit-close-btn {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 1.9em;
+    cursor:pointer;
+    color: #fb5d5d;
+    z-index: 10;
+}
+
+.edit-close-btn[class*="top"] {
+    z-index: 10;
+    right: 6px;
+    top: 3px;
+}
+
+.panel-header-buttons {
+    float: right;
+    margin-top: -9px;
+}
+
+.center {
+    text-align: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.animated-speed {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+}
+
+/*checkboxes*/
+.custom-checkbox-wrapper {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    height: 40px;
+}
+.custom-checkbox-wrapper label {
+    cursor: pointer;
+}
+
+.custom-checkbox-wrapper + .custom-checkbox-wrapper {
+    margin-left: 15px;
+}
+
+.custom-checkbox-wrapper .toggle {
+    top: 5px;
+}
+
+.custom-checkbox-wrapper .control-label {
+    margin-left: 62px !important;
+    line-height: 40px;
+}
+
+.inline-checkbox {
+    margin-top: 22px;
+}
+
+.background-image-preview-wrapper {
+    height: 300px;
+    border: 1px solid #d7dce5;
+    background-position: 50%;
+    background-size: cover;
+}
+
+/*header*/
+/*.flex-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}*/
+
+.page_header .header-btn-block-right {
+    line-height: 42px;
+    text-align: right;
+}
+@media (max-width: 767px) {
+    .page_header .header-btn-block-right {
+        text-align: left;
+    }
+}
+
+.left-margin-20 {
+    margin-left: 20px;
+}
+/*END COMMON*/
+
+
+
+
+/*/////////////////////*/
+/*FORMS*/
+.fr-wrapper + div a {
+    visibility: hidden;
+}
+/*END FORMS*/
+
+
+
+
+
+/*/////////////////////*/
+/*PANEL*/
+.btn-panel {
+    margin-right: 15px;
+}
+
+.btn-panel:last-child {
+    margin-right: 0;
+}
+
+.btn-panel.pull-right {
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+.panel-title-icon {
+    color: #0c82df;
+}
+/*END PANEL*/
+
+
+
+
+
+/*/////////////////////*/
+/*UNIVERSITY*/
+.empty-image {
+    background-image: url('../images/empty-image.png');
+    background-position: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain !important;
+}
+
+.add-university-logo-preview-wrapper {
+    height: 208px;
+    border: 1px solid #d7dce5;
+    position: relative;
+    overflow: hidden;
+}
+
+.add-university-logo-preview {
+    position: absolute;
+    max-height: 208px;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+/*END UNIVERSITY*/
+
+
+
+
+
+/*/////////////////////*/
+/*DIRECTIONS GROUP*/
+.add-direction-icon-preview-wrapper {
+    height: 148px;
+    border: 1px solid #d7dce5;
+    position: relative;
+    overflow: hidden;
+}
+
+.add-direction-icon-preview {
+    position: absolute;
+    max-height: 148px;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+/*END DIRECTIONS GROUP*/
+
+
+
+
+
+
+
+
+/*/////////////////////*/
+/*DATA TABLES*/
+.action-td i {
+    font-size: 2em;
+    margin: 0 5px 0 5px;
+    color: #9398a0;
+}
+
+.action-td {
+    line-height: 1em !important;
+}
+
+.action-td div {
+    display: inline-block;
+}
+
+.dataTables_length {
+    float: right;
+}
+
+.dataTables_filter input {
+    margin-left: 7px;
+}
+
+.table-responsive input[type=search] {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 0px;
+    box-shadow: none;
+    border-color: #d7dce5;
+    height: 40px;
+    font-weight: 300;
+    line-height: 40px;
+    color: #aaaaaa;
+}
+
+.table-responsive select {
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/*END DATA TABLES*/
+
+
+
+
+
+/*SCHOOLS*/
+.schools-list {
+    padding-left: 0;
+    list-style: none;
+    line-height: 26px;
+}
+/*END SCHOOLS*/
+
+
+
+
+
+
+
+/*DIRECTION SPECIALITIES*/
+.accreditation-title {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 33px;
+    margin-bottom: 10px;
+    background: #eee;
+}
+/*END DIRECTION SPECIALITIES*/
+
+
+
+
+
+/*GRID*/
+@media (max-width: 991px) {
+  .sm-form-group {
+        margin-bottom: 15px;
+  }
+}
+/*END GRID*/

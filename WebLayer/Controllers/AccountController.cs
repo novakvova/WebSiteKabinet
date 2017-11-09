@@ -7,10 +7,13 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using WebLayer.Healper;
 
 namespace WebLayer.Controllers
 {
@@ -88,6 +91,21 @@ namespace WebLayer.Controllers
         {
             if (ModelState.IsValid)
             {
+                string imagePath = "asdfasdf";
+                string dir = imagePath;
+                int widthBig = 2560;
+                // Імя фалу із зображенням
+            string filePhoto = string.Empty;
+                filePhoto = Guid.NewGuid().ToString() + ImageWorker.GetImageType(model.Image);
+                byte[] bytesPhoto = ImageWorker.GetImageBytesFromBase64(model.Image);
+                string imageType = ImageWorker.GetImageType(model.Image);
+                Bitmap imageBig = ImageWorker.SaveImageFromBytesTry(bytesPhoto, widthBig);
+                if (imageBig != null)
+                {
+                    string fileName = widthBig + "_" + filePhoto;
+                    string pathSaveFile = Path.Combine(dir, fileName);
+                    imageBig.Save(pathSaveFile, ImageWorker.GetImageFormat(imageType));
+                }
                 var result = await _accountProvider.RegisterAsync(model);
                 if (result)
                 {

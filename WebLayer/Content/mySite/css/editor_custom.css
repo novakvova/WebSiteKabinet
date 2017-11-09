@@ -1,0 +1,44 @@
+.fr-box.fr-basic .fr-element {
+    min-height: 240px !important;
+    padding-bottom: 30px !important;
+}
+.fr-element p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+    line-height: 25px;
+}
+.fr-element p span {
+    margin: 20px 0;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.2px;
+}
+.fr-element ol {
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+.fr-element ul {
+    margin: 0 0 20px;
+    overflow: hidden;
+}
+.fr-element ul li {
+    font-style: normal;
+    color: #959595;
+    font-size: 16px;
+}
+.fr-element h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: #005c8d;
+    padding: 0 40px; 
+}
+.fr-element h4 {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #005c8d; 
+    margin-bottom: 20px;
+    padding: 0 40px; 
+}
